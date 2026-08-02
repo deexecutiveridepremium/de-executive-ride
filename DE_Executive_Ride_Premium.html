@@ -1,0 +1,150 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DE Executive Ride</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Poppins,sans-serif;background:#090909;color:#fff}
+.hero{
+min-height:100vh;
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.8)),
+url('jeep.jpg');
+background-size:cover;background-position:center;
+display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 30px}
+.overlay{max-width:900px}
+.logo{width:95px;height:95px;border:2px solid #d4af37;border-radius:50%;
+display:flex;align-items:center;justify-content:center;margin:auto;
+font-size:42px;font-weight:700;color:#d4af37}
+h1{font-size:56px;margin:20px 0 5px}
+.gold{color:#d4af37}
+p{color:#ddd;line-height:1.6}
+.buttons{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;margin-top:30px}
+.btn{padding:15px 28px;border-radius:40px;text-decoration:none;font-weight:700}
+.primary{background:#d4af37;color:#111}
+.secondary{border:1px solid #d4af37;color:#fff}
+section{max-width:1100px;margin:auto;padding:70px 25px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.card{background:#151515;border:1px solid #333;border-radius:18px;padding:22px}
+.card h3{color:#d4af37}
+form{display:grid;gap:12px}
+input,textarea{padding:14px;border-radius:12px;border:none;background:#1d1d1d;color:white}
+button{padding:15px;border:none;border-radius:12px;background:#d4af37;font-weight:bold}
+footer{text-align:center;padding:40px;background:#111;color:#aaa}
+.small{font-size:.9rem}
+
+</style>
+</head>
+<body>
+
+<div class="hero">
+<div class="overlay">
+<div class="logo">DE</div>
+<h1>DE Executive Ride</h1>
+<h3 class="gold">Professional Private Transportation</h3>
+<p>Kansas City • Safe • Reliable • Professional</p>
+
+<div class="buttons">
+<a class="btn primary" href="tel:+13312502833">📞 Call Now</a>
+<a class="btn secondary" href="sms:+13312502833">💬 Text Me</a>
+<a class="btn secondary" href="https://instagram.com/Duvanenrique1">📷 Instagram</a>
+<a class="btn secondary" href="https://wa.me/13312502833">🟢 WhatsApp</a>
+</div>
+</div>
+</div>
+
+<section>
+<h2 class="gold">Executive Services</h2>
+<div class="cards">
+<div class="card"><h3>✈ Airport Transfers</h3><p>Reliable pickups and drop-offs.</p></div>
+<div class="card"><h3>🏨 Hotel Transportation</h3><p>Comfortable rides to and from hotels.</p></div>
+<div class="card"><h3>🎵 Events & Concerts</h3><p>Stress-free transportation.</p></div>
+<div class="card"><h3>🛣 Long Distance</h3><p>Travel beyond Kansas City.</p></div>
+<div class="card"><h3>⏰ Hourly Service</h3><p>Available by custom quote.</p></div>
+<div class="card"><h3>💼 Business Travel</h3><p>Professional executive transportation.</p></div>
+</div>
+</section>
+
+<section>
+<h2 class="gold">Payment Methods</h2>
+<div class="cards">
+<div class="card">💲 Cash App</div>
+<div class="card">💜 Venmo</div>
+<div class="card">🏦 Zelle</div>
+</div>
+</section>
+
+<section>
+<h2 class="gold">Request a Quote</h2>
+<form id="quoteForm" onsubmit="return false;">
+<input placeholder="Your Name">
+<input placeholder="Pickup Address">
+<input placeholder="Destination">
+<input type="date">
+<input type="time">
+<textarea placeholder="Additional details"></textarea>
+<button>Request Quote</button>
+</form>
+</section>
+
+<section>
+<h2 class="gold">Contact</h2>
+<p>📞 +1 (331) 250-2833</p>
+<p>📧 duvantamiche16@gmail.com</p>
+<p>📷 @Duvanenrique1</p>
+<p>📍 Kansas City, Missouri</p>
+</section>
+
+<footer>
+<strong>DE Executive Ride</strong><br>
+by Duvan Enrique
+</footer>
+<script>
+document.getElementById("quoteForm").addEventListener("submit", function () {
+
+const name = document.querySelector('input[placeholder="Your Name"]').value;
+const pickup = document.querySelector('input[placeholder="Pickup Address"]').value;
+const destination = document.querySelector('input[placeholder="Destination"]').value;
+const date = document.querySelector('input[type="date"]').value;
+const time = document.querySelector('input[type="time"]').value;
+const details = document.querySelector("textarea").value;
+
+const message = `New Quote Request
+
+Name: ${name}
+Pickup: ${pickup}
+Destination: ${destination}
+Date: ${date}
+Time: ${time}
+
+Details:
+${details}`;
+
+const whatsapp = `https://wa.me/13312502833?text=${encodeURIComponent(message)};`
+
+const sms = `sms:+13312502833?body=${encodeURIComponent(message)};`
+
+const email = `mailto:duvantamiche16@gmail.com?subject=New Quote Request&body=${encodeURIComponent(message)};`
+
+const option = prompt(
+"Choose how to send your request:\n\n1 = WhatsApp\n2 = SMS\n3 = Email"
+);
+
+if (option == "1") {
+    window.location.href = whatsapp;
+}
+else if (option == "2") {
+    window.location.href = sms;
+}
+else if (option == "3") {
+    window.location.href = email;
+}
+
+});
+</script>
+</body>
+</html>
